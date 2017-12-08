@@ -1,0 +1,65 @@
+
+#assigning players money
+player_1_money = 1000
+player_2_money = 1000
+betted_money_for_p1 = 0
+betted_money_for_p2 = 0
+
+#asking for the number of players
+numberOfPlayers = int(input("How many players do want to play?: "))
+
+#if num of players is = 1 ask only for player ones money
+
+if numberOfPlayers == 1:
+    #makeing sure the player enters a value of money
+    while True:
+        try:
+            
+            betted_money_for_p1  = int(input("How much money do you want to bet?: "))
+            break
+        except:
+            print("Give me a value of money in numbers")
+            
+
+
+#if player num = 2 ask for player 1s and player 2s money
+    
+elif numberOfPlayers == 2:
+    #makeing sure the players enter a value of money
+    while True:
+        try:
+            
+            betted_money_for_p1  = int(input("Player 1, How much money do you want to bet?: "))
+            betted_money_for_p2  = int(input("Player 2, How much money do you want to bet?: "))
+            break
+        except:
+            print("Give me avalue of money in numbers")
+#make a function for subtractiong the money and showing the ballance for each player
+
+def money_system(player_1_money, player_2_money, betted_money_for_p1,betted_money_for_p2):
+    #if players = 1 subtract the betted money out of the total and print out their new balance
+    if numberOfPlayers == 1:
+        
+          
+        player_1_money -= betted_money_for_p1
+        print("Now you balance is", player_1_money, "dollars. good luck!")
+        print("player 1 betted", betted_money_for_p1, "dollars")
+                
+    #if players = 2 subtract the betted money out of the total and print out theur new balance
+    if numberOfPlayers == 2:
+        
+               
+        player_1_money -= betted_money_for_p1
+        player_2_money -= betted_money_for_p2
+
+        print("PLayer 1, Now you balance is", player_1_money, "dollars. good luck!")
+        print("Player 2, Now you balance is", player_2_money, "dollars. good luck!")
+        print("player 1 betted",betted_money_for_p1, "dollars\nplayer 2 betted",betted_money_for_p2, "dollars" )
+                
+            
+               
+
+#call function
+        
+    
+money_system(player_1_money, player_2_money, betted_money_for_p1, betted_money_for_p2)
